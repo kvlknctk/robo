@@ -45,14 +45,10 @@
     <div class="bgslider videoalan">
         <div class="_pattern-overlay"></div>
 
-
-
         <video autoplay muted loop id="myVideo">
             <source src="{{asset('video/video3.mp4')}}" type="video/mp4">
             Tarayiciniz video oynatma ozelligini desteklemiyor.
         </video>
-
-
 
         <div id="owl-slider-home" class="owl-carousel _pattern-overlay2">
 
