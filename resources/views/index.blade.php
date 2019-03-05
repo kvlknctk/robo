@@ -49,7 +49,7 @@
 
         <video autoplay muted loop id="myVideo">
             <source src="{{asset('video/video3.mp4')}}" type="video/mp4">
-            Your browser does not support HTML5 video.
+            Tarayiciniz video oynatma ozelligini desteklemiyor.
         </video>
 
 
