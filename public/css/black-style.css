@@ -610,7 +610,7 @@ li > a:only-child:after {
     padding-bottom: 64px;
     padding-top: 39px;
     background: #222;
-    background: url(../img/bg-subheader.jpg) top fixed;
+    /*background: url(../img/bg-subheader.jpg) top fixed;*/
 }
 
 #subheader h1 {

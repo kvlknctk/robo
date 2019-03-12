@@ -1,4 +1,7 @@
-<section id="subheader">
+
+
+
+<section id="subheader" style="background: url({{url('')}}) top fixed;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
