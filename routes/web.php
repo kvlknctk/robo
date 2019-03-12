@@ -19,8 +19,10 @@
     Route::get('/kurumsal', ['as' => 'kurumsal', 'uses' => 'HomeCTRL@kurumsal_index']);
     Route::get('/kurumsal/{slug}', ['as' => 'kurumsal_slug', 'uses' => 'HomeCTRL@kurumsal_detail']);
 
-
     Route::get('/hizmetler', ['as' => 'hizmetler', 'uses' => 'HomeCTRL@hizmetler']);
+    Route::get('/hizmetler/{slug}', ['as' => 'hizmetler_slug', 'uses' => 'HomeCTRL@hizmetler_slug']);
+
+
     Route::get('/calismalar', ['as' => 'calismalar', 'uses' => 'HomeCTRL@calismalar']);
     Route::get('/iletisim', ['as' => 'iletisim', 'uses' => 'HomeCTRL@iletisim']);
     Route::post('/iletisim', ['as' => 'iletisim_post', 'uses' => 'HomeCTRL@iletisim_post']);

@@ -50,7 +50,22 @@
             $title     = 'Hizmetler';
             $hizmetler = Hizmetler::get();
 
-            return view('hizmetler', compact('title', 'hizmetler'));
+            // ilk hizmetin görülmesi için rastgele çekiyoruz.
+            $first_service = Hizmetler::first();
+
+            return redirect()->route('hizmetler_slug', ['slug' => $first_service->slug]);
+
+            //return view('hizmetler', compact('title', 'hizmetler' ));
+
+        }
+
+        public function hizmetler_slug($slug)
+        {
+            $service    = Hizmetler::whereSlug($slug)->firstOrFail();
+            $services   = Hizmetler::get();
+            $title = $service->title;
+            //return $service;
+            return view('hizmetler', compact('title', 'service', 'services' ));
 
         }
 
@@ -60,7 +75,6 @@
             $calismalar = Calismalar::get();
 
             return view('calismalar', compact('title', 'calismalar'));
-
         }
 
 
