@@ -89,6 +89,11 @@
             return $category_detail;
         }
 
+        public function calismalar_detail($works_id)
+        {
+            return $works_id;
+        }
+
 
         public function iletisim()
         {
