@@ -5,12 +5,14 @@
     use App\Build;
     use App\Hgallery;
     use App\Hizmetler;
+    use App\Kategoriler;
     use App\Kurumsal;
     use App\Calismalar;
 
     use App\Mail\Contactci;
     use App\Slider;
     use App\Iletisim;
+    use TCG\Voyager\Models\Category;
     use TCG\Voyager\Models\Post;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Mail;
@@ -71,10 +73,20 @@
 
         public function calismalar()
         {
+
+            // ana kategorileri bulmak için
+            $kategoriler =  Kategoriler::whereNull('parent_id')->with('child')->get();
+
             $title      = 'Çalışmalar';
             $calismalar = Calismalar::get();
 
-            return view('calismalar', compact('title', 'calismalar'));
+            return view('calismalar', compact('title', 'calismalar', 'kategoriler'));
+        }
+
+        public function calismalar_cat($cat_id)
+        {
+            $category_detail = Kategoriler::with('works')->find($cat_id);
+            return $category_detail;
         }
 
 

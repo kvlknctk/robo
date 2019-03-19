@@ -24,6 +24,9 @@
 
 
     Route::get('/calismalar', ['as' => 'calismalar', 'uses' => 'HomeCTRL@calismalar']);
+    Route::get('/calismalar/{cat_id}', ['as' => 'calismalar_cat', 'uses' => 'HomeCTRL@calismalar_cat']);
+
+
     Route::get('/iletisim', ['as' => 'iletisim', 'uses' => 'HomeCTRL@iletisim']);
     Route::post('/iletisim', ['as' => 'iletisim_post', 'uses' => 'HomeCTRL@iletisim_post']);
 

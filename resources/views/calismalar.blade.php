@@ -1,7 +1,5 @@
 @extends('layout.master')
 
-@section('body')
-
 @section('css')
     <style>
         .fact-block .fact {
@@ -44,16 +42,81 @@
             margin-bottom: 50px;
             min-height: 120px;
         }
-        .block-feature-icon:hover {
-            /* Effect 2a */
+
+
+        .robo_kategori {
+            margin: 10px!important;
+            width: 290px;
+            /*padding: 10px;*/
+            padding-bottom: 20px;
+            height: 390px;
+            background: #fecb00;
+            -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 90%, 90% 100%, 20% 100%, 0% 100%, 0% 20%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 90%, 90% 100%, 20% 100%, 0% 100%, 0% 20%);
+            font-weight: bold;
+        }
+
+        .robo_kategori:hover {
+            cursor:pointer;
+
+            background: #ffde09;
 
         }
+
+
+        .robo_kategori_baslik {
+            padding-left: 15px;
+            padding-top: 10px;
+        }
+        .robo_kategori_baslik > h2 {
+            color:black;
+            font-weight: bold;
+        }
+        .robo_kategori_baslik > p {
+            color:black;
+
+        }
+
     </style>
-    @endsection
+@endsection
+
+
+@section('body')
 
     @include('part.breadcumb')
 
-    <div class="space-double"></div>
+
+    <section class="whitepage no-bottom no-top" id="projects">
+
+        <div class="space-double"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="onStep" data-animation="fadeInUp" data-time="600">
+
+                   @foreach($kategoriler as $kategori)
+
+                       <div class="col-md-3 robo_kategori_margin">
+                           <div class="robo_kategori" onclick="location.href='{{route('calismalar_cat', ['cat_id' => $kategori->id])}}';">
+
+                               <img src="{{Voyager::image($kategori->thumbnail('cropped'))}}" alt="">
+                               <div class="robo_kategori_baslik">
+                                   <h2>{{$kategori->title}}</h2>
+                                   <p>{{$kategori->body}}</p>
+                               </div>
+                           </div>
+                       </div>
+
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+
+        <div class="space-double"></div>
+
+    </section>
+
 
     <div class="fact-block">
         <div class="container">
@@ -82,39 +145,6 @@
             </div>
         </div>
     </div>
-    <section class="whitepage no-bottom no-top" id="projects">
-
-
-
-        <div class="space-double"></div>
-
-
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="onStep" data-animation="fadeInUp" data-time="600" id="projects-wrap">
-
-                    @foreach($calismalar  as $item)
-
-                        <div class="projects arc coor">
-                            <div class="hovereffect big-img">
-                                <a href="{{asset('storage/'.$item->image)}}">
-                                    <img alt="imageportofolio" class="img-responsive" src="{{asset('storage/'.$item->image)}}">
-                                    <div class="overlay">
-                                        <h3>{{$item->title}}</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    @endforeach
-
-                </div>
-            </div>
-        </div>
-
-        <div class="space-double"></div>
-
-    </section>
 @endsection
 
 @section('jsPart')
