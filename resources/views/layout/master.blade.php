@@ -29,7 +29,7 @@
 <div class="bg-preloader"></div>
 <div class="preloader">
     <div class="mainpreloader">
-        <img alt="preloaderlogo" src="img/logo.png"> <span class="logo-preloader">lütfen bekleyiniz</span>
+        <img alt="preloaderlogo" src="{{asset('img/logo.png')}}"> <span class="logo-preloader">lütfen bekleyiniz</span>
     </div>
 </div>
 <!-- yükleyici end -->
@@ -48,7 +48,9 @@
                 <span class="icon icon-bar"></span></button>
 
             <!-- logo -->
-            <a class="navbar-brand" href="{{url('/')}}"><img alt="Robotaryum logo" src="{{Voyager::image(setting('grafik.logo'))}}"></a>
+            <a class="navbar-brand" href="{{route('index')}}">
+                <img alt="Robotaryum logo" src="{{Voyager::image(setting('grafik.logo'))}}">
+            </a>
 
             <!-- anamenü -->
             <div class="menu-init" id="main-menu">
@@ -56,10 +58,18 @@
                     <ul>
                         {{--@php(menu('main', 'robo_menu'))--}}
                         <li><a href="{{route('index')}}">Anasayfa</a></li>
+                        <li><a href="blog.html">Blogg</a>
+                            <ul>
+                                <li><a href="blog.html">Single Blog</a></li>
+                                <li><a href="blog-post.html">Blog Post</a></li>
+                            </ul>
+                        </li>
+
                         <li><a href="{{route('kurumsal')}}">Kurumsal</a></li>
                         <li><a href="{{route('hizmetler')}}">Hizmetler</a></li>
                         <li><a href="{{route('calismalar')}}">Çalışmalar</a></li>
                         <li><a href="{{route('iletisim')}}">İletişim</a></li>
+
                     </ul>
                 </nav>
             </div>
