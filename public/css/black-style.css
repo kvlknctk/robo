@@ -575,7 +575,7 @@ nav ul ul li {
     width: 200px;
     float: none;
     display: list-item;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgb(255, 203, 0);
     border-bottom: 1px solid #323642;
     position: relative;
 }

@@ -32,7 +32,7 @@
 
         public function kurumsal_index()
         {
-            $title  = 'Kurumsal';
+            $title = 'Kurumsal';
 
             return view('kurumsal.kurum_index', compact('title', 'images'));
         }
@@ -42,7 +42,7 @@
         {
             $detail = Build::whereSlug($slug)->first();
 
-            $title  = $detail->title;
+            $title = $detail->title;
 
             return view('kurumsal.kurum_detail', compact('title', 'detail'));
         }
@@ -63,11 +63,12 @@
 
         public function hizmetler_slug($slug)
         {
-            $service    = Hizmetler::whereSlug($slug)->firstOrFail();
-            $services   = Hizmetler::get();
-            $title = $service->title;
+            $service  = Hizmetler::whereSlug($slug)->firstOrFail();
+            $services = Hizmetler::get();
+            $title    = $service->title;
+
             //return $service;
-            return view('hizmetler', compact('title', 'service', 'services' ));
+            return view('hizmetler', compact('title', 'service', 'services'));
 
         }
 
@@ -75,7 +76,7 @@
         {
 
             // ana kategorileri bulmak için
-            $kategoriler =  Kategoriler::whereNull('parent_id')->with('child')->get();
+            $kategoriler = Kategoriler::whereNull('parent_id')->with('child')->get();
 
             $title      = 'Çalışmalar';
             $calismalar = Calismalar::get();
@@ -83,21 +84,34 @@
             return view('calismalar', compact('title', 'calismalar', 'kategoriler'));
         }
 
-        public function calismalar_cat($cat_id)
+        public function calismalar_cat($slug)
         {
-            $category_detail = Kategoriler::with('works')->find($cat_id);
-            return $category_detail;
+            $category_detail = Kategoriler::with(['works', 'child.works'])->whereSlug($slug)->firstOrFail();
+            $title           = $category_detail->title;
+
+            return view('calismalar_cat', compact('title', 'category_detail'));
+
         }
 
-        public function calismalar_detail($works_id)
+        public function calismalar_detail($slug, $work)
         {
-            return $works_id;
+
+            $work  = Calismalar::whereSlug($work)->firstOrFail();
+            $others = Kategoriler::with(['works' => function($q){
+                $q->limit(5);
+            }])->whereSlug($slug)->firstOrFail();
+            $title = $work->title;
+
+
+            return view('calismalar_detail', compact('title', 'work', 'others', 'slug'));
+
         }
 
 
         public function iletisim()
         {
             $title = 'İletişim';
+
             return view('iletisim', compact('title'));
         }
 
@@ -117,7 +131,6 @@
             $add->save();
 
             Mail::to("info@robotaryum.com")->send(new Contactci($add));
-
 
 
             if ($add) {

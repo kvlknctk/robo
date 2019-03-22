@@ -97,7 +97,7 @@
                    @foreach($kategoriler as $kategori)
 
                        <div class="col-md-3 robo_kategori_margin">
-                           <div class="robo_kategori" onclick="location.href='{{route('calismalar_cat', ['cat_id' => $kategori->id])}}';">
+                           <div class="robo_kategori" onclick="location.href='{{route('calismalar_cat', ['slug' => $kategori->slug])}}';">
 
                                <img src="{{Voyager::image($kategori->thumbnail('cropped'))}}" alt="">
                                <div class="robo_kategori_baslik">
