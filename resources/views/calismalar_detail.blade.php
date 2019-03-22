@@ -6,7 +6,7 @@
 
     @include('part.breadcumb')
 
-    <section id="content" aria-label="section-blogg">
+    <section id="content" aria-label="section-blogg" class="whitepage">
         <div class="container">
             <div class="row">
 
