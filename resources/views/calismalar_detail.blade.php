@@ -59,8 +59,12 @@
                             <h5>Ekler</h5>
                             <div class="space-single devider-widget"></div>
                             <div class="tags">
-                                <div><a href="#">Video</a></div>
-                                <div><a href="#">Dosya</a></div>
+
+                                @if($work->video)
+                                    <div>
+                                        <a href="{{$work->video}}" target="_blank">Video</a>
+                                    </div>
+                                @endif
 
                             </div>
                         </div>
