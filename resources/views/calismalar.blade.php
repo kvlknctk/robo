@@ -51,8 +51,8 @@
             padding-bottom: 20px;
             height: 390px;
             background: #fecb00;
-            -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 90%, 90% 100%, 20% 100%, 0% 100%, 0% 20%);
-            clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 90%, 90% 100%, 20% 100%, 0% 100%, 0% 20%);
+            -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 90%, 88% 100%, 20% 100%, 0% 100%, 0% 20%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 90%, 88% 100%, 20% 100%, 0% 100%, 0% 20%);
             font-weight: bold;
         }
 
