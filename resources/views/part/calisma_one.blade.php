@@ -7,7 +7,7 @@
         {{--</div></a>--}}
 {{--</div>--}}
 
-<div class="col-md-3 robo_kose">
+<div class="col-md-4 robo_kose">
     <div class="team-wrapper onStep" onclick="location.href='{{route('calismalar_detail', ['slug' => $slug, 'work' => $work->slug])}}';"
          data-animation="fadeInUp" data-time="200">
         <img alt="team img 1" class="img-responsive" src="{{Voyager::image($work->thumbnail('cropped'))}}">
