@@ -48,14 +48,21 @@
 
                 <div class="col-md-8 col-xs-12">
                     <div class="onStep" data-animation="fadeInLeft" data-time="600" id="contact">
-                        <form action="#" class="row" id="form-contact" method="post" name="form-contact">
-                            <input id="name-contact" name="name" placeholder="your name" type="text">
-                            <input id="email-contact" name="email" placeholder="your e-mail" type="text">
-                            <textarea cols="50" id="message-contact" name="message" placeholder="your enquiry" rows="4"></textarea>
+
+
+                        <form onsubmit="gonder(); return false;" class="row" method="post" name="form-contact">
+                            {{csrf_field()}}
+                            <input id="name" name="name" placeholder="Ad Soyad" type="text">
+                            <input id="email" name="email" placeholder="E-Posta" type="text">
+                            <textarea cols="50" id="message" name="message" placeholder="Mesajınız" rows="4"></textarea>
+
                             <div class="success" id="mail_success">Thank you. Your message has been sent</div>
                             <div class="error" id="mail_failed"> Error, email not sent</div>
-                            <button class="btn-form" id="send-contact" type="submit">Sent Now</button>
+
+                            <button class="btn-form" id="send-contact" type="submit">Gönder</button>
                         </form>
+
+
                     </div>
                 </div>
 
