@@ -1,5 +1,4 @@
 {{--
-
 <div class="col-md-8 col-xs-12">
     <div class="onStep" data-animation="fadeInLeft" data-time="600" id="contact">
         <form  class="row" id="form-contact" method="get" name="form-contact">
@@ -60,6 +59,7 @@
             <li><a href="$">Deneme</a></li>
             <li><a href="$">Deneme</a></li>
         </ul>
+
     </div>
 </div>
 
