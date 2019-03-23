@@ -58,22 +58,27 @@
                     <ul>
                         {{--@php(menu('main', 'robo_menu'))--}}
                         <li><a href="{{route('index')}}">Anasayfa</a></li>
-                        <li><a href="blog.html">Blogg</a>
-                            <ul>
-                                <li><a href="blog.html">Single Blog</a></li>
-                                <li><a href="blog-post.html">Blog Post</a></li>
-                            </ul>
-                        </li>
 
                         <li>
                             <a href="{{route('kurumsal')}}">Kurumsal</a>
                             <ul>
-                                @foreach($company as $item)
-                                    <li><a href="#">Deneme</a></li>
+                                @foreach($kurumsal as $item)
+                                    <li>
+                                        <a href="{{route('kurumsal_slug', ['slug'=>$item->slug])}}">{{$item->title}}</a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{route('hizmetler')}}">Hizmetler</a></li>
+                        <li>
+                            <a href="{{route('hizmetler')}}">Hizmetler</a>
+                            <ul>
+                                @foreach($hizmet as $item2)
+                                    <li>
+                                        <a href="{{route('hizmetler_slug', ['slug'=>$item2->slug])}}">{{$item2->title}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
                         <li><a href="{{route('calismalar')}}">Çalışmalar</a></li>
                         <li><a href="{{route('iletisim')}}">İletişim</a></li>
 
