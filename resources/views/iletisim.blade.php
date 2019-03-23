@@ -2,27 +2,73 @@
 
 @section('body')
 
-
     @include('part.breadcumb')
 
+    <section class="contactbg " id="contactus">
 
-    <section class="contactbg no-top no-bottom" id="contactus">
+        <div class="container">
+            <div class="row">
 
+                <div class="col-md-4 col-xs-12">
+                    <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
+
+                        <address>
+
+                            <span>
+                            <strong>ADRES </strong><br>
+                            {{Voyager::setting('iletisim.adres')}}
+                            </span>
+
+                            <span>
+                            <strong>TEL 1</strong> <br>
+                            {{Voyager::setting('iletisim.tel1')}}
+                            </span>
+
+                            <span>
+                            <strong>TEL 2</strong> <br>
+                            {{Voyager::setting('iletisim.tel2')}}
+                            </span>
+
+                            <span>
+                            <strong>FAX</strong> <br>
+                            {{Voyager::setting('iletisim.fax')}}
+                            </span>
+
+                            <span>
+                            <strong>E-POSTA</strong><br>
+                            <a href="mailto:{{Voyager::setting('iletisim.email')}}">{{Voyager::setting('iletisim.email')}}</a>
+                            </span>
+
+
+                        </address>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-8 col-xs-12">
+                    <div class="onStep" data-animation="fadeInLeft" data-time="600" id="contact">
+                        <form action="#" class="row" id="form-contact" method="post" name="form-contact">
+                            <input id="name-contact" name="name" placeholder="your name" type="text">
+                            <input id="email-contact" name="email" placeholder="your e-mail" type="text">
+                            <textarea cols="50" id="message-contact" name="message" placeholder="your enquiry" rows="4"></textarea>
+                            <div class="success" id="mail_success">Thank you. Your message has been sent</div>
+                            <div class="error" id="mail_failed"> Error, email not sent</div>
+                            <button class="btn-form" id="send-contact" type="submit">Sent Now</button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="space-single"></div>
 
         <div class="jumbotron no-top no-bottom">
             <div class="onStep" data-animation="fadeInUp" data-time="300" id="map"></div>
         </div>
 
 
-        <div class="container">
-            <div class="row">
-
-                @include('part.contact')
-            </div>
-        </div>
-
-
-        <div class="space-single"></div>
     </section>
 
 
@@ -71,12 +117,16 @@
 @endsection
 
 @section('jsPart')
-    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCQ5KODzqooIP496GPLRaMAsZ4eN8Vro_U"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyD9x1avD0s05fC_WwX3Jq3AZZcO51jgG38"></script>
+
+    {{--<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyD9x1avD0s05fC_WwX3Jq3AZZcO51jgG38"
+            async defer></script>--}}
+
 
     <script>
         google.maps.event.addDomListener(window, 'load', init);
-        var lat = '{{Voyager::setting('lat')}}';
-        var lng = '{{Voyager::setting('lng')}}';
+        var lat = '{{Voyager::setting('iletisim.lat')}}';
+        var lng = '{{Voyager::setting('iletisim.lng')}}';
 
         function init() {
 
