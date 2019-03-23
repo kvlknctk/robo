@@ -29,7 +29,7 @@
 <div class="bg-preloader"></div>
 <div class="preloader">
     <div class="mainpreloader">
-        <img alt="preloaderlogo" src="{{asset('img/logo.png')}}"> <span class="logo-preloader">lütfen bekleyiniz</span>
+        <img alt="preloaderlogo" src="{{Voyager::image(setting('grafik.logo'))}}"> <span class="logo-preloader">lütfen bekleyiniz</span>
     </div>
 </div>
 <!-- yükleyici end -->
@@ -90,7 +90,7 @@
         </div>
         <!-- .içerik -->
     </div>
-    <!-- menü end -->
+
 
     @yield('body')
 
