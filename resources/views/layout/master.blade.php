@@ -65,7 +65,14 @@
                             </ul>
                         </li>
 
-                        <li><a href="{{route('kurumsal')}}">Kurumsal</a></li>
+                        <li>
+                            <a href="{{route('kurumsal')}}">Kurumsal</a>
+                            <ul>
+                                @foreach($company as $item)
+                                    <li><a href="#">Deneme</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
                         <li><a href="{{route('hizmetler')}}">Hizmetler</a></li>
                         <li><a href="{{route('calismalar')}}">Çalışmalar</a></li>
                         <li><a href="{{route('iletisim')}}">İletişim</a></li>
