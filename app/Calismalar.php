@@ -9,4 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Calismalar extends Model
 {
     use Resizable;
+
+
+    public function images()
+    {
+        return $this->hasMany('App\Gallery', 'work_id');
+    }
 }

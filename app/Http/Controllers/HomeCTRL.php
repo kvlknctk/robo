@@ -96,14 +96,22 @@
         public function calismalar_detail($slug, $work)
         {
 
-            $work  = Calismalar::whereSlug($work)->firstOrFail();
-            $others = Kategoriler::with(['works' => function($q){
+            $work   = Calismalar::with('images')
+                ->whereSlug($work)
+                ->firstOrFail();
+
+
+
+            $others = Kategoriler::with(['works' => function ($q) {
                 $q->limit(5);
             }])->whereSlug($slug)->firstOrFail();
-            $title = $work->title;
+
+            $categories = Kategoriler::limit(5)->get();
+
+            $title  = $work->title;
 
 
-            return view('calismalar_detail', compact('title', 'work', 'others', 'slug'));
+            return view('calismalar_detail', compact('title', 'work', 'others', 'slug', 'categories'));
 
         }
 
