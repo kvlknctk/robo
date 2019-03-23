@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-
+        view()->composer('*','App\Http\ViewComposers\GenelComposer');
 
         view()->composer(
             'kurumsal.*',
