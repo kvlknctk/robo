@@ -122,23 +122,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-6">
-                    <article class="fact" data-perc="{{Voyager::setting('mutlu_musteri')}}">
+                    <article class="fact" data-perc="{{Voyager::setting('degiskenler.mutlu_musteri')}}">
                         <i class="ion-ios-people-outline"></i>
-                        <h1 class="factor">{{Voyager::setting('mutlu_musteri')}}</h1>
+                        <h1 class="factor">{{Voyager::setting('degiskenler.mutlu_musteri')}}</h1>
                         <h4>Mutlu Müşteri</h4>
                     </article>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <article class="fact" data-perc="{{Voyager::setting('yeni_proje')}}">
+                    <article class="fact" data-perc="{{Voyager::setting('degiskenler.yeni_proje')}}">
                         <i class="ion-ios-lightbulb-outline"></i>
-                        <h1 class="factor">{{Voyager::setting('yeni_proje')}}</h1>
+                        <h1 class="factor">{{Voyager::setting('degiskenler.yeni_proje')}}</h1>
                         <h4>Yeni Proje</h4>
                     </article>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <article class="fact" data-perc="{{Voyager::setting('tamamlanan_proje')}}">
+                    <article class="fact" data-perc="{{Voyager::setting('degiskenler.tamamlanan_proje')}}">
                         <i class="ion-ios-pint-outline"></i>
-                        <h1 class="factor">{{Voyager::setting('tamamlanan_proje')}}</h1>
+                        <h1 class="factor">{{Voyager::setting('degiskenler.tamamlanan_proje')}}</h1>
                         <h4>Tamamlanan Proje</h4>
                     </article>
                 </div>
