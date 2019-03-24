@@ -3,14 +3,15 @@
     namespace App\Http\ViewComposers;
 
     use App\Build;
+    use App\Calismalar;
     use App\Hizmetler;
-    use App\Kurumsal;
     use Illuminate\View\View;
 
     class GenelComposer
     {
-        public $kurumsal = [];
-        public $hizmet   = [];
+        public $kurumsal   = [];
+        public $hizmet     = [];
+        public $calismalar = [];
 
         /**
          * Create a movie composer.
@@ -19,8 +20,9 @@
          */
         public function __construct()
         {
-            $this->kurumsal = Build::all();
-            $this->hizmet   = Hizmetler::all();
+            $this->kurumsal   = Build::all();
+            $this->hizmet     = Hizmetler::all();
+            $this->calismalar = Calismalar::limit(7)->get();
         }
 
         /**
@@ -33,5 +35,6 @@
         {
             $view->with('kurumsal', $this->kurumsal);
             $view->with('hizmet', $this->hizmet);
+            $view->with('works', $this->calismalar);
         }
     }
