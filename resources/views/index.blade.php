@@ -87,7 +87,7 @@
     </div>
 
 
-    <section class="yellowpage">
+   {{-- <section class="yellowpage">
         <div class="container">
             <div class="row">
 
@@ -100,7 +100,7 @@
             </div>
         </div>
     </section>
-
+--}}
 
 
 
