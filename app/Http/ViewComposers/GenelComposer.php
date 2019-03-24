@@ -22,7 +22,7 @@
         {
             $this->kurumsal   = Build::all();
             $this->hizmet     = Hizmetler::all();
-            $this->calismalar = Calismalar::limit(7)->get();
+            $this->calismalar = Calismalar::with('categories')->limit(7)->get();
         }
 
         /**

@@ -15,4 +15,9 @@ class Calismalar extends Model
     {
         return $this->hasMany('App\Gallery', 'work_id');
     }
+
+    public function categories()
+    {
+        return $this->belongsTo('App\Kategoriler', 'category_id');
+    }
 }

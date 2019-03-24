@@ -7,7 +7,7 @@
     <style>
         #myVideo {
             /*position: fixed;*/
-            height: 600px!important;
+            height: 600px !important;
             right: 0;
             min-width: 100%;
             min-height: 100%;
@@ -33,6 +33,7 @@
 
 
         }
+
         .videoalan {
             background: #000;
             position: relative;
@@ -54,8 +55,8 @@
 
             @foreach($slider as $item)
                 <div class="item">
-                    {{--<img alt="background" src="{{asset('storage/'.$item->image)}}">--}}
-                    <!-- intro -->
+                {{--<img alt="background" src="{{asset('storage/'.$item->image)}}">--}}
+                <!-- intro -->
                     <div class=" v-align text-center">
                         <div class="col-md-10 col-xs-11">
 
@@ -86,17 +87,34 @@
     </div>
 
 
-    <!-- sarı -->
- {{--   <section class="yellow-page v-align">
+    <section class="yellowpage">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <a class="popup-form" href="#subwrap"><h4 class="text-center onStep" data-animation="fadeInUp"
-                                                              data-time="600">E-Bülten Kaydı</h4></a>
+
+                <div class="col-md-12">
+                    <div class="onStep" data-animation="fadeInLeft" data-time="300">
+                        <h2>{{setting('iletisim.hotline')}}</h2>
+                    </div>
                 </div>
+
             </div>
         </div>
-    </section>--}}
+    </section>
+
+
+
+
+    <!-- sarı -->
+    {{--   <section class="yellow-page v-align">
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-6 col-md-offset-3">
+                       <a class="popup-form" href="#subwrap"><h4 class="text-center onStep" data-animation="fadeInUp"
+                                                                 data-time="600">E-Bülten Kaydı</h4></a>
+                   </div>
+               </div>
+           </div>
+       </section>--}}
     <!-- sarı end -->
 
     <!-- bölüm contact -->
@@ -105,7 +123,6 @@
 
         <div class="container">
             <div class="row">
-
                 @include('part.contact')
             </div>
         </div>
@@ -127,8 +144,8 @@
 
         function gonder() {
 
-            var name    = $('#name').val();
-            var email   = $('#email').val();
+            var name = $('#name').val();
+            var email = $('#email').val();
             var message = $('#message').val();
 
             $.ajax({
@@ -136,17 +153,17 @@
                 url: '{{route('iletisim_post')}}',
                 data: {
                     name: name,
-                    email : email,
+                    email: email,
                     message: message
                 },
                 dataType: "json",
                 success: function (gelen) {
-                    if(gelen == "1"){
+                    if (gelen == "1") {
                         alert("Mesajınız gönderildi. Kısa süre sonra sizinle iletişime geçilecektir.");
                         $('#name').val("");
                         $('#email').val("");
                         $('#message').val("");
-                    }else {
+                    } else {
                         alert('Bir problem oluştu lütfen telefon yolu ile iletişime geçiniz. ')
                     }
 
@@ -155,4 +172,4 @@
 
         }
     </script>
-    @endsection
+@endsection
