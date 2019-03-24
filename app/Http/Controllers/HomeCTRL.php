@@ -20,18 +20,16 @@
 
         public function index()
         {
-            $title  = 'Robotaryum';
-            $this->seo()->setTitle('Anasayfa');
             $slider = Slider::orderBy('orders', 'asc')->get();
 
-            return view("index", compact('title', 'slider'));
+            $this->seo()->setTitle('Anasayfa');
+            return view("index", compact( 'slider'));
         }
 
         public function kurumsal_index()
         {
-            $title = 'Kurumsal';
-
-            return view('kurumsal.kurum_index', compact('title', 'images'));
+            $this->seo()->setTitle('Kurumsal');
+            return view('kurumsal.kurum_index', compact( 'images'));
         }
 
 
@@ -39,33 +37,26 @@
         {
             $detail = Build::whereSlug($slug)->first();
 
-            $title = $detail->title;
-
-            return view('kurumsal.kurum_detail', compact('title', 'detail'));
+            $this->seo()->setTitle($detail->title);
+            return view('kurumsal.kurum_detail', compact( 'detail'));
         }
 
         public function hizmetler()
         {
-            $title     = 'Hizmetler';
-            $hizmetler = Hizmetler::get();
 
             // ilk hizmetin görülmesi için rastgele çekiyoruz.
             $first_service = Hizmetler::first();
 
             return redirect()->route('hizmetler_slug', ['slug' => $first_service->slug]);
-
-            //return view('hizmetler', compact('title', 'hizmetler' ));
-
         }
 
         public function hizmetler_slug($slug)
         {
             $service  = Hizmetler::whereSlug($slug)->firstOrFail();
             $services = Hizmetler::get();
-            $title    = $service->title;
 
-            //return $service;
-            return view('hizmetler', compact('title', 'service', 'services'));
+            $this->seo()->setTitle($service->title);
+            return view('hizmetler', compact( 'service', 'services'));
 
         }
 
@@ -75,18 +66,18 @@
             // ana kategorileri bulmak için
             $kategoriler = Kategoriler::whereNull('parent_id')->with('child')->get();
 
-            $title      = 'Çalışmalar';
             $calismalar = Calismalar::get();
 
-            return view('calismalar', compact('title', 'calismalar', 'kategoriler'));
+            $this->seo()->setTitle('Çalışmalar');
+            return view('calismalar', compact( 'calismalar', 'kategoriler'));
         }
 
         public function calismalar_cat($slug)
         {
             $category_detail = Kategoriler::with(['works', 'child.works'])->whereSlug($slug)->firstOrFail();
-            $title           = $category_detail->title;
 
-            return view('calismalar_cat', compact('title', 'category_detail'));
+            $this->seo()->setTitle($category_detail->title);
+            return view('calismalar_cat', compact( 'category_detail'));
 
         }
 
@@ -97,27 +88,23 @@
                 ->whereSlug($work)
                 ->firstOrFail();
 
-
-
             $others = Kategoriler::with(['works' => function ($q) {
                 $q->limit(5);
             }])->whereSlug($slug)->firstOrFail();
 
             $categories = Kategoriler::limit(5)->get();
 
-            $title  = $work->title;
-
-
-            return view('calismalar_detail', compact('title', 'work', 'others', 'slug', 'categories'));
+            $this->seo()->setTitle($work->title);
+            return view('calismalar_detail', compact( 'work', 'others', 'slug', 'categories'));
 
         }
 
 
         public function iletisim()
         {
-            $title = 'İletişim';
 
-            return view('iletisim', compact('title'));
+            $this->seo()->setTitle('İletişim');
+            return view('iletisim');
         }
 
         public function iletisim_post(Request $request)
