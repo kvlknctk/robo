@@ -2,10 +2,8 @@
 <html lang="tr">
 <head>
     <meta charset="utf-8">
-    <title>{{$title}}</title>
-    <meta content="@yield('description')" name="description">
+    {!! SEO::generate() !!}
     <meta content="Robotaryum Ltd. Şti. " name="author">
-    <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
 	<meta name="yandex-verification" content="8390d93eebbc930a" />
     <link href="{{asset('img/favicon.png')}}" rel="icon" sizes="32x32" type="image/png">

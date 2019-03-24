@@ -3,28 +3,25 @@
     namespace App\Http\Controllers;
 
     use App\Build;
-    use App\Hgallery;
     use App\Hizmetler;
     use App\Kategoriler;
-    use App\Kurumsal;
     use App\Calismalar;
-
+    use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
     use App\Mail\Contactci;
     use App\Slider;
     use App\Iletisim;
-    use TCG\Voyager\Models\Category;
-    use TCG\Voyager\Models\Post;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Mail;
 
 
     class HomeCTRL extends Controller
     {
-        //
+        use SEOToolsTrait;
 
         public function index()
         {
             $title  = 'Robotaryum';
+            $this->seo()->setTitle('Anasayfa');
             $slider = Slider::orderBy('orders', 'asc')->get();
 
             return view("index", compact('title', 'slider'));
