@@ -14,50 +14,29 @@
 </div>
 --}}
 
-<div class="col-md-2 col-xs-12">
+<div class="col-md-3 col-xs-12">
     <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
         <h5>Kurumsal</h5>
-
         <ul>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
+            @foreach($kurumsal as $item)
+                <li>
+                    <a href="{{route('kurumsal_slug', ['slug'=>$item->slug])}}">{{$item->title}}</a>
+                </li>
+            @endforeach
         </ul>
     </div>
 </div>
 
-<div class="col-md-2 col-xs-12">
-    <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
-        <h5>Çalışmalar</h5>
 
-      <ul>
-          <li><a href="$">Deneme</a></li>
-          <li><a href="$">Deneme</a></li>
-          <li><a href="$">Deneme</a></li>
-          <li><a href="$">Deneme</a></li>
-          <li><a href="$">Deneme</a></li>
-          <li><a href="$">Deneme</a></li>
-          <li><a href="$">Deneme</a></li>
-      </ul>
-    </div>
-</div>
-
-<div class="col-md-2 col-xs-12">
+<div class="col-md-3 col-xs-12">
     <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
-        <h5>Hizmetler</h5>
+        <h5>Son Çalışmalarımız</h5>
 
         <ul>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
-            <li><a href="$">Deneme</a></li>
+            @foreach($works as $item)
+                <li><a href="#">{{$item->title}}</a></li>
+                @endforeach
+
         </ul>
 
     </div>
