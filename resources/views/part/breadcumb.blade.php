@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>{{$title}}</h1>
-                <ul class="subdetail">
+                <ul class="subdetail hidden-xs">
                     <li><a href="{{route('index')}}">Anasayfa</a></li>
                     <li class="sep">/</li>
                     <li>{{$title}}</li>

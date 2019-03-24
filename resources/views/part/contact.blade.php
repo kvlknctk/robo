@@ -50,6 +50,7 @@
         <h5>Hızlı İletişim</h5>
 
         <address>
+            <span><strong style="color: #f7c51e;"> <i class="fa fa-life-ring fa-spin"></i> HOTLINE : </strong> {{Voyager::setting('iletisim.hotline')}} </span>
 
             <span><strong>Telefon :</strong> {{Voyager::setting('iletisim.tel1')}}</span>
             <span><strong>Telefon :</strong> {{Voyager::setting('iletisim.tel2')}}</span>
