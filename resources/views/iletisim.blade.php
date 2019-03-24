@@ -56,8 +56,8 @@
                             <input id="email" name="email" placeholder="E-Posta" type="text">
                             <textarea cols="50" id="message" name="message" placeholder="Mesajınız" rows="4"></textarea>
 
-                            <div class="success" id="mail_success">Thank you. Your message has been sent</div>
-                            <div class="error" id="mail_failed"> Error, email not sent</div>
+                            <div class="success" id="mail_success">Teşekkürler, Mesajınız gönderildi. Gerekli durumda sizinle iletişime geçeceğiz. </div>
+                            <div class="error" id="mail_failed"> Hata, Forum bazı sebeplerden dolayı gönderilemedi. </div>
 
                             <button class="btn-form" id="send-contact" type="submit">Gönder</button>
                         </form>
