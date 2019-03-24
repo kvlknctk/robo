@@ -368,6 +368,20 @@ section {
     color: #242424;
 }
 
+/* yellowpage */
+.yellowpage{
+    width: 100%;
+    height:auto;
+    color:#181818;
+    padding:60px 0 60px 0;
+    background:#f7c51e;
+}
+.yellowpage h1, .whitepage h2, .whitepage h3, .whitepage h4, .whitepage h5, .whitepage h6{ color:#181818; }
+.yellowpage h1{ font-weight:600; letter-spacing:2px;}
+.yellowpage h2{ font-weight:600; text-align: center;}
+.yellowpage em{ display:block; font-style:italic; margin-bottom:20px;}
+.yellowpage article{ padding:10px 60px 0 0;}
+
 /* preloader */
 .preloader {
     position: fixed;
