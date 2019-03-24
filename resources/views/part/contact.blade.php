@@ -30,7 +30,7 @@
 
 <div class="col-md-3 col-xs-12">
     <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
-        <h5>Son Çalışmalarımız</h5>
+        <h5>Son Çalışmalar</h5>
 
         <ul>
             @foreach($works as $item)

@@ -37,7 +37,7 @@
 
     <!-- menü -->
     <div class="navbar navbar-default navbar-fixed-top onStep sticky-nav" data-animation="fadeInDown" data-time="0">
-        <div class="container">
+        <div class="container" >
 
             <!-- mobil menü-->
             <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
@@ -46,7 +46,7 @@
                 <span class="icon icon-bar"></span></button>
 
             <!-- logo -->
-            <a class="navbar-brand" href="{{route('index')}}">
+            <a class="navbar-brand" href="{{route('index')}}" >
                 <img alt="Robotaryum logo" src="{{Voyager::image(setting('grafik.logo'))}}">
             </a>
 
