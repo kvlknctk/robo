@@ -121,30 +121,39 @@
     <div class="fact-block">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <article class="fact" data-perc="{{Voyager::setting('degiskenler.mutlu_musteri')}}">
                         <i class="ion-ios-people-outline"></i>
                         <h1 class="factor">{{Voyager::setting('degiskenler.mutlu_musteri')}}</h1>
                         <h4>Mutlu Müşteri</h4>
                     </article>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <article class="fact" data-perc="{{Voyager::setting('degiskenler.yeni_proje')}}">
                         <i class="ion-ios-lightbulb-outline"></i>
                         <h1 class="factor">{{Voyager::setting('degiskenler.yeni_proje')}}</h1>
                         <h4>Yeni Proje</h4>
                     </article>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <article class="fact" data-perc="{{Voyager::setting('degiskenler.tamamlanan_proje')}}">
                         <i class="ion-ios-pint-outline"></i>
                         <h1 class="factor">{{Voyager::setting('degiskenler.tamamlanan_proje')}}</h1>
                         <h4>Tamamlanan Proje</h4>
                     </article>
                 </div>
+                <div class="col-md-3 col-sm-6">
+                    <article class="fact" data-perc="{{Voyager::setting('degiskenler.toplam_proje')}}">
+                        <i class="ion-ios-pint-outline"></i>
+                        <h1 class="factor">{{Voyager::setting('degiskenler.toplam_proje')}}</h1>
+                        <h4>Toplam Proje</h4>
+                    </article>
+                </div>
             </div>
         </div>
     </div>
+
+
 @endsection
 
 @section('jsPart')

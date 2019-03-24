@@ -34,8 +34,10 @@
 
         <ul>
             @foreach($works as $item)
-                <li><a href="#">{{$item->title}}</a></li>
-                @endforeach
+                <li>
+                    <a href="{{route('calismalar_detail', ['slug' =>$item->categories->slug, 'work' => $item->slug])}}">{{$item->title}}</a>
+                </li>
+            @endforeach
 
         </ul>
 
