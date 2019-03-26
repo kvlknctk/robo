@@ -481,7 +481,7 @@ section {
 }
 
 .sticky-nav.navbar-default {
-    background: #fecb00;
+    background: #fff;
     margin: 0;
     border-bottom: 1px groove rgba(255, 255, 255, 0);
 }
@@ -589,7 +589,7 @@ nav ul ul li {
     width: 200px;
     float: none;
     display: list-item;
-    background: rgb(255, 203, 0);
+    background: #fff;
     border-bottom: 1px solid #323642;
     position: relative;
 }
