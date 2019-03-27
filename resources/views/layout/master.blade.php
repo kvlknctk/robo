@@ -132,7 +132,7 @@
         <button class="btn-form" id="submit-2" type="submit">Haber Listesine Ekle</button>
     </form>
     <div class="subscribesuccess">Teşekkürler. E-Posta listemize eklendiniz. </div>
-</div>--}}
+</div> temizlik ile git kontrolü --}}
 
 
 
