@@ -5,6 +5,7 @@
     use App\Build;
     use App\Calismalar;
     use App\Hizmetler;
+    use App\Kategoriler;
     use Illuminate\View\View;
 
     class GenelComposer
@@ -12,6 +13,7 @@
         public $kurumsal   = [];
         public $hizmet     = [];
         public $calismalar = [];
+        public $categories = [];
 
         /**
          * Create a movie composer.
@@ -23,6 +25,7 @@
             $this->kurumsal   = Build::all();
             $this->hizmet     = Hizmetler::all();
             $this->calismalar = Calismalar::with('categories')->limit(7)->get();
+            $this->categories = Kategoriler::whereNull('parent_id')->get();
         }
 
         /**
@@ -36,5 +39,6 @@
             $view->with('kurumsal', $this->kurumsal);
             $view->with('hizmet', $this->hizmet);
             $view->with('works', $this->calismalar);
+            $view->with('allcategories', $this->categories);
         }
     }

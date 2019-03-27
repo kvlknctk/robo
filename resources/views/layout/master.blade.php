@@ -77,7 +77,16 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{route('calismalar')}}">Çalışmalar</a></li>
+                        <li>
+                            <a href="{{route('calismalar')}}">Çalışmalar</a>
+                            <ul>
+                                @foreach($allcategories as $item3)
+                                    <li>
+                                        <a href="{{route('calismalar_cat', ['slug'=>$item3->slug])}}">{{$item3->title}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
                         <li><a href="{{route('iletisim')}}">İletişim</a></li>
 
                     </ul>
