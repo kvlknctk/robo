@@ -14,13 +14,27 @@
 </div>
 --}}
 
-<div class="col-md-3 col-xs-12">
+<div class="col-md-2 col-xs-12">
     <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
         <h5>Kurumsal</h5>
         <ul>
             @foreach($kurumsal as $item)
                 <li>
                     <a href="{{route('kurumsal_slug', ['slug'=>$item->slug])}}">{{$item->title}}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+</div>
+
+
+<div class="col-md-2 col-xs-12">
+    <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
+        <h5>Hizmetler</h5>
+        <ul>
+            @foreach($hizmet as $hiz)
+                <li>
+                    <a href="{{route('hizmetler_slug', ['slug'=>$hiz->slug])}}">{{$hiz->title}}</a>
                 </li>
             @endforeach
         </ul>
@@ -45,7 +59,7 @@
 </div>
 
 
-<div class="col-md-6 col-xs-12">
+<div class="col-md-5 col-xs-12">
     <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
         <h5>Hızlı İletişim</h5>
 
