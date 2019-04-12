@@ -102,7 +102,6 @@
 
         public function iletisim()
         {
-
             $this->seo()->setTitle('İletişim');
             return view('iletisim');
         }
