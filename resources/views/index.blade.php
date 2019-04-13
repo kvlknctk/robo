@@ -202,6 +202,7 @@
                     </div>
 
                     <div class="onStep" data-animation="fadeInUp" data-time="900" id="services">
+
                         <div class="service passion">
                             <img class="img-responsive" alt="img" src="img/img-service-1.jpg">
                             <h4>WE ARE PASSIONATE</h4>
@@ -237,6 +238,7 @@
                                 et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
                             </p>
                         </div>
+
                     </div>
 
                 </div>
