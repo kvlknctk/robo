@@ -58,10 +58,7 @@
                                 @php $first = 1; @endphp
                                 @php $toplam = $builds->count(); @endphp
                                 @foreach($builds as $build)
-
-                                    <li class="filt-serv @if($first == 1) selected @endif"
-                                        data-filter=".{{$build->slug}}">{{$build->title}}</li>
-
+                                    <li class="filt-serv @if($first == 1) selected @endif" data-filter=".{{$build->slug}}">{{$build->title}}</li>
                                     @if($toplam !== $first)
                                         <li class="space">•</li>
                                     @endif
