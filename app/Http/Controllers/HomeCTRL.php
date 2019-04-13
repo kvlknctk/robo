@@ -29,7 +29,8 @@
         public function kurumsal_index()
         {
             $this->seo()->setTitle('Kurumsal');
-            return view('kurumsal.kurum_index', compact( 'images'));
+            $builds = Build::all();
+            return view('company', compact('builds'));
         }
 
 
